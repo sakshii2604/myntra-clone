@@ -1,0 +1,170 @@
+/* Hide scrollbars */
+.slider::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar,
+.content::-webkit-scrollbar,
+.drawer::-webkit-scrollbar,
+.dealsRow::-webkit-scrollbar,
+#login::-webkit-scrollbar,
+#signup::-webkit-scrollbar,
+#creatA::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Navbar styles */
+.navbar.active {
+  animation: fadeIn 0.4s linear forwards;
+  box-shadow: 0 8px 20px 0 rgb(0 0 0 / 10%);
+}
+
+.navbar {
+  transition: all 0.9s;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown behavior */
+.nav-item {
+  position: relative; /* Important for dropdown positioning */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  padding: 10px;
+  margin: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+  animation: drop 0.4s linear forwards;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown item styling */
+.dropdown-menu li {
+  padding: 5px 0px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #282C3F !important;
+}
+
+.dropdown-menu li:hover {
+  font-weight: 600 !important;
+  cursor: pointer;
+}
+
+/* Misc navbar item */
+.item:hover {
+  background: #eee;
+}
+
+#navbarSupportedContent .nav-item {
+  height: 80px;
+}
+
+.loginBtn:hover {
+  background-color: #ff3f6c !important;
+  color: white !important;
+}
+
+.collapsed #changeArrow {
+  transform: rotate(0deg);
+  transition: 0.2s;
+}
+
+#changeArrow {
+  transition: 0.2s;
+  transform: rotate(90deg);
+}
+
+.accordion-button {
+  width: 100%;
+  background: none;
+  font-size: 1rem;
+  border: 0;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+/* Mobile behavior */
+@media (max-width: 990px) {
+  #navbarSupportedContent .nav-item {
+    height: auto;
+  }
+
+  .dropdown-menu .row {
+    width: fit-content;
+  }
+
+  .navbar-collapse {
+    overflow-y: scroll;
+    height: 75vh;
+  }
+
+  .homeLiving {
+    width: fit-content !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-nav {
+    padding: 15px 0px;
+  }
+
+  #mobileView {
+    height: 100vh !important;
+    width: 100vw !important;
+    top: 0;
+    z-index: 6;
+    position: absolute;
+  }
+}
+
+@media (max-width: 765px) {
+  #profile {
+    display: none;
+  }
+
+  #mobileProfile {
+    display: block !important;
+  }
+}
